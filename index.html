@@ -1,150 +1,227 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <title>SD Nail Artist – Luxe Nagelstudio Ninove</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SD Nail Artist – luxe nagelstudio in Ninove. Gelnagels, BIAB en nail art. Boek eenvoudig via WhatsApp." />
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <meta charset="UTF-8">
+  <title>SD Nail Artist – Nagelstudio Ninove</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    .demo-badge {
+    :root {
+      --bg: #0f0f0f;
+      --card: #1a1a1a;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --accent: #d4af37;
+      --whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .demo {
       position: fixed;
       top: 12px;
       right: 12px;
-      background: #000;
-      color: #fff;
+      background: black;
       padding: 6px 10px;
       font-size: 12px;
       letter-spacing: 1px;
-      z-index: 9999;
-      opacity: 0.85;
+      z-index: 999;
     }
 
-    .cta-whatsapp {
-      background: #25D366 !important;
-      color: #fff !important;
-      border: none !important;
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .whatsapp-float {
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--whatsapp);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .img {
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      background: linear-gradient(
+        135deg,
+        #2c2c2c,
+        #111,
+        #3a3a3a
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    ul {
+      margin-top: 1rem;
+    }
+
+    li {
+      margin-bottom: .6rem;
+    }
+
+    .why {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media(min-width: 768px) {
+      .why {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25D366;
-      color: #fff;
+      background: var(--whatsapp);
+      color: white;
       padding: 14px 18px;
       border-radius: 50px;
-      font-weight: 600;
       text-decoration: none;
-      z-index: 9999;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      z-index: 999;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 
-<body class="is-preload">
+<body>
 
-<div class="demo-badge">DEMO</div>
+<div class="demo">DEMO</div>
 
-<a href="https://wa.me/32477326227" target="_blank" class="whatsapp-float">
-  💬 Boek via WhatsApp
+<a class="float" href="https://wa.me/32477326227" target="_blank">
+  💬 WhatsApp
 </a>
 
-<div id="wrapper" class="divided">
+<section class="hero">
+  <div>
+    <h1>SD Nail Artist</h1>
+    <p>
+      Luxe nagels met oog voor detail.<br>
+      Een rustige nagelstudio in Ninove waar kwaliteit centraal staat.
+    </p>
 
-  <!-- HERO -->
-  <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-    <div class="content">
-      <h1>SD Nail Artist</h1>
-      <p class="major">
-        Luxe nagels. Perfect afgewerkt.<br>
-        Voor vrouwen die oog hebben voor detail.
-      </p>
-      <ul class="actions stacked">
-        <li>
-          <a href="https://wa.me/32477326227" target="_blank" class="button large wide cta-whatsapp">
-            Boek je afspraak via WhatsApp
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="images/banner.jpg" alt="SD Nail Artist nagelstudio Ninove" />
-    </div>
-  </section>
+    <a class="btn" href="https://wa.me/32477326227" target="_blank">
+      Boek via WhatsApp
+    </a>
+  </div>
 
-  <!-- DIENSTEN -->
-  <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
-    <div class="content">
-      <h2>Diensten</h2>
-      <ul>
-        <li>Gelnagels & BIAB</li>
-        <li>Acrylnagels</li>
-        <li>Nail art (vanaf €5)</li>
-        <li>Manicure & verzorging</li>
-        <li>Pedicure</li>
-      </ul>
-      <p>
-        Elke set wordt met zorg geplaatst, afgestemd op jouw stijl,
-        levensstijl en wensen.
-      </p>
-    </div>
-    <div class="image">
-      <img src="images/spotlight01.jpg" alt="Nagelbehandeling" />
-    </div>
-  </section>
+  <div class="img">
+    HERO IMAGE
+  </div>
+</section>
 
-  <!-- WAAROM -->
-  <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
-    <div class="content">
-      <h2>Waarom kiezen voor SD Nail Artist?</h2>
-      <ul>
-        <li>⭐ 5/5 beoordeling op Google</li>
-        <li>Persoonlijke & rustige studio</li>
-        <li>Hygiënisch en professioneel</li>
-        <li>Gelegen in Ninove</li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="images/spotlight02.jpg" alt="Nagel detail" />
-    </div>
-  </section>
+<section>
+  <h2>Diensten</h2>
 
-  <!-- CONTACT -->
-  <section class="wrapper style1 align-center">
-    <div class="inner">
-      <h2>Afspraak maken</h2>
-      <p>
-        📍 Botermelkstraat 2A, 9400 Ninove<br>
-        📞 +32 477 32 62 27
-      </p>
+  <div class="card">
+    <ul>
+      <li>💅 Gelnagels & BIAB</li>
+      <li>✨ Acrylnagels</li>
+      <li>🎨 Nail art (vanaf €5)</li>
+      <li>🧴 Manicure</li>
+      <li>🦶 Pedicure</li>
+    </ul>
+  </div>
+</section>
 
-      <ul class="actions">
-        <li>
-          <a href="https://wa.me/32477326227" target="_blank" class="button primary cta-whatsapp">
-            Boek nu via WhatsApp
-          </a>
-        </li>
-      </ul>
+<section>
+  <h2>Waarom SD Nail Artist?</h2>
 
-      <p style="margin-top:2rem; font-size:0.85rem; opacity:0.6;">
-        Demo prototype – inhoud gebaseerd op publiek beschikbare informatie.
-      </p>
-    </div>
-  </section>
+  <div class="why">
+    <div class="card">⭐ 5/5 Google reviews</div>
+    <div class="card">👩‍🎨 Persoonlijke aanpak</div>
+    <div class="card">🧼 Hygiënisch & professioneel</div>
+    <div class="card">📍 Gelegen in Ninove</div>
+  </div>
+</section>
 
-</div>
+<section>
+  <h2>Contact</h2>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+  <div class="card">
+    <p>
+      📍 Botermelkstraat 2A, 9400 Ninove<br>
+      📞 +32 477 32 62 27
+    </p>
+
+    <a class="btn" href="https://wa.me/32477326227" target="_blank">
+      Boek je afspraak
+    </a>
+  </div>
+</section>
+
+<footer>
+  Demo prototype – gebaseerd op publiek beschikbare informatie.
+</footer>
 
 </body>
 </html>
