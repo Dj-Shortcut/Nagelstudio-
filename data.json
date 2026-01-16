@@ -1,0 +1,35 @@
+{
+  "mode": "demo",
+
+  "studio": {
+    "name": "SD Nail Artist",
+    "tagline": "Elegantie • Verzorging • Stijl",
+    "category": "Nagelstudio",
+    "rating": {
+      "score": 5.0,
+      "reviews": 15
+    }
+  },
+
+  "status": {
+    "open": false,
+    "opens_at": "15:10"
+  },
+
+  "contact": {
+    "phone": "+32 477 32 62 27",
+    "address": {
+      "street": "Botermelkstraat 2A",
+      "postal_code": "9400",
+      "city": "Ninove",
+      "country": "België"
+    }
+  },
+
+  "services": [
+    "Gelmanicures",
+    "Manicure",
+    "Nagelverlengingen",
+    "Kunstnagels"
+  ]
+}
