@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nagelstudio</title>
+  <title>SD Nail Artist</title>
 
   <style>
     * {
@@ -21,7 +21,7 @@
 
     header {
       height: 70vh;
-      background: 
+      background:
         linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
         url("images/banner.jpg") center/cover no-repeat;
       display: flex;
@@ -29,6 +29,20 @@
       justify-content: center;
       text-align: center;
       padding: 2rem;
+      position: relative;
+    }
+
+    .demo-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff9800;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 6px;
+      display: none;
     }
 
     header h1 {
@@ -53,6 +67,27 @@
       margin-bottom: 2.5rem;
       font-size: 2rem;
       letter-spacing: 1px;
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .services {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .services li {
+      padding: 1rem;
+      background: #151515;
+      border-radius: 10px;
     }
 
     .spotlight {
@@ -96,33 +131,66 @@
 <body>
 
   <header>
+    <div class="demo-badge" id="demoBadge">DEMO</div>
     <div>
-      <h1>Nagelstudio</h1>
-      <p>Elegantie • Verzorging • Stijl</p>
+      <h1 id="studioName">Nagelstudio</h1>
+      <p id="studioTagline">Elegantie • Verzorging • Stijl</p>
+      <div class="status" id="studioStatus"></div>
     </div>
   </header>
 
   <section>
+    <h2>Diensten</h2>
+    <ul class="services" id="services"></ul>
+  </section>
+
+  <section>
     <h2>Spotlight</h2>
     <div class="spotlight">
-      <img src="images/spotlight01.jpg" alt="Spotlight 1">
-      <img src="images/spotlight02.jpg" alt="Spotlight 2">
-      <img src="images/spotlight03.jpg" alt="Spotlight 3">
+      <img src="images/spotlight01.jpg" alt="Spotlight 1" loading="lazy">
+      <img src="images/spotlight02.jpg" alt="Spotlight 2" loading="lazy">
+      <img src="images/spotlight03.jpg" alt="Spotlight 3" loading="lazy">
     </div>
   </section>
 
   <section>
     <h2>Onze werken</h2>
     <div class="gallery">
-      <img src="images/pic01.jpg" alt="Werk 1">
-      <img src="images/pic02.jpg" alt="Werk 2">
-      <img src="images/pic03.jpg" alt="Werk 3">
+      <img src="images/pic01.jpg" alt="Werk 1" loading="lazy">
+      <img src="images/pic02.jpg" alt="Werk 2" loading="lazy">
+      <img src="images/pic03.jpg" alt="Werk 3" loading="lazy">
     </div>
   </section>
 
   <footer>
-    © 2026 Nagelstudio — Alle rechten voorbehouden
+    © 2026 SD Nail Artist — Alle rechten voorbehouden
   </footer>
+
+  <script>
+    fetch("data.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("studioName").textContent = data.studio.name;
+        document.getElementById("studioTagline").textContent = data.studio.tagline;
+
+        document.getElementById("studioStatus").textContent =
+          data.status.open
+            ? "Nu open"
+            : "Gesloten — opent om " + data.status.opens_at;
+
+        const servicesEl = document.getElementById("services");
+        data.services.forEach(service => {
+          const li = document.createElement("li");
+          li.textContent = service;
+          servicesEl.appendChild(li);
+        });
+
+        if (data.mode === "demo") {
+          document.getElementById("demoBadge").style.display = "block";
+        }
+      })
+      .catch(err => console.error("Kan data.json niet laden", err));
+  </script>
 
 </body>
 </html>
